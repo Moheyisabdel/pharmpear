@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+.env
+login-secret.txt
+__pycache__/
+*.pyc

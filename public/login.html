@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in — PharmPear</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ribbon">Private page · Email sign-in required</div>
+  <main class="login-shell">
+    <a class="brand" href="/login">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path fill="#1c6b43" d="M24 6c2 6 2 10 0 16 6-2 10-2 16 0-6 2-10 6-12 12-2-6-6-10-12-12 6-2 10-6 8-16z"/>
+        <path fill="#0e3d28" d="M23 22h2v18h-2z"/>
+      </svg>
+      <span>PharmPear</span>
+    </a>
+    <h1>Sign in with your email.</h1>
+    <p class="lede">This page stays locked until the PharmPear email and password match. The session ends after 30 minutes of quiet, or 8 hours at most.</p>
+    <form method="post" action="/login">
+      <input type="hidden" name="csrf" value="__CSRF__">
+      <p class="form-error" role="alert">__ERROR__</p>
+      <label>Email <input name="email" type="email" autocomplete="username" required maxlength="120"></label>
+      <label>Password <input name="password" type="password" autocomplete="current-password" required maxlength="200"></label>
+      <button class="btn btn-solid" type="submit">Sign in</button>
+    </form>
+  </main>
+</body>
+</html>

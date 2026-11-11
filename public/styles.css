@@ -225,6 +225,27 @@ input, textarea {
 }
 .mail { font-size: 1.05rem; }
 .form-note { min-height: 1.2rem; margin: 0; color: var(--leaf); }
+.form-error { margin: 0; color: #8d2d2d; font-weight: 600; }
+.form-error:empty { display: none; }
+.secure-bar {
+  margin: 0;
+  padding: 0.45rem 4vw;
+  background: #e7f3ea;
+  color: var(--deep);
+  font-size: 0.92rem;
+}
+.logout {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  text-decoration: none;
+}
+.login-shell {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 4rem 1.25rem 5rem;
+}
+.login-shell h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
 
 .site-footer {
   display: grid;
