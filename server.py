@@ -195,23 +195,25 @@ def robots():
 
 @app.get("/")
 def home():
-    if not session_ok():
-        return redirect("/login")
     return send_page("index.html")
 
 
 @app.get("/privacy")
 @app.get("/privacy.html")
 def privacy():
-    if not session_ok():
-        return redirect("/login")
     return send_page("privacy.html")
 
 
 def send_page(name):
     html = (PUBLIC / name).read_text(encoding="utf-8")
-    html = html.replace("__USER__", session.get("user") or "")
-    return html
+    user = session.get("user") if session_ok() else ""
+    if user:
+        bar = f'<p class="secure-bar">Signed in as {user}</p>'
+        auth = '<a class="logout" href="/logout">Log out</a>'
+    else:
+        bar = ""
+        auth = '<a class="logout" href="/login">Sign in</a>'
+    return html.replace("__BAR__", bar).replace("__AUTH__", auth)
 
 
 @app.get("/<path:name>")

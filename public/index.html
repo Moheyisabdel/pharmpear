@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PharmPear — Prescriptions, labels, and delivery</title>
-  <meta name="description" content="PharmPear processes electronic and fax prescriptions with AI, checks drug interactions, prepares labeled orders from wholesalers, assigns drivers, and creates FedEx shipments for pickup.">
+  <title>PharmPear — Pharmacy for electronic and fax prescriptions</title>
+  <meta name="description" content="PharmPear is a pharmacy that reads electronic and fax prescriptions with AI, checks drug interactions, orders from wholesalers, prepares labeled orders, and delivers by driver or FedEx.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://pharmpear.com/">
   <meta property="og:title" content="PharmPear">
-  <meta property="og:description" content="Electronic and fax prescriptions, AI intake, interaction review, labels, drivers, and FedEx pickup.">
+  <meta property="og:description" content="A pharmacy that takes electronic and fax prescriptions through to a labeled order, a driver, or a FedEx pickup.">
   <meta property="og:url" content="https://pharmpear.com/">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,8 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="ribbon">Electronic and fax prescriptions · Labels · Drivers and FedEx</div>
-  <p class="secure-bar">Signed in as __USER__ · this page is locked to your session</p>
+  <div class="ribbon">Pharmacy · Prescriptions · Labels · Delivery</div>
+  __BAR__
   <header class="site-header">
     <a class="brand" href="#top">
       <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
@@ -30,109 +30,99 @@
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav">
-      <a href="#prescriptions">Prescriptions</a>
-      <a href="#safety">Interactions</a>
-      <a href="#fulfill">Fulfillment</a>
+      <a href="#about">About</a>
+      <a href="#work">How we work</a>
       <a href="#contact">Contact</a>
-      <a class="logout" href="/logout">Log out</a>
+      __AUTH__
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
-        <p class="eyebrow">Pharmacy operations</p>
-        <h1>From the prescription to <em>the labeled order.</em></h1>
-        <p class="lede">We process electronic and fax prescriptions with AI, review them for drug interactions, prepare the order with labels, and send it out with a driver or FedEx.</p>
+        <p class="eyebrow">The business</p>
+        <h1>A pharmacy that takes a prescription <em>all the way out.</em></h1>
+        <p class="lede">PharmPear receives electronic and fax prescriptions, reads them with AI, and reviews them for drug interactions. We order from our wholesalers, prepare the order with labels, and send it with a driver or as a FedEx shipment and pickup.</p>
         <div class="hero-actions">
-          <a class="btn btn-solid" href="#contact">Contact PharmPear</a>
-          <a class="btn btn-ghost" href="#prescriptions">See the workflow</a>
+          <a class="btn btn-solid" href="#about">Read about PharmPear</a>
+          <a class="btn btn-ghost" href="#contact">Contact the pharmacy</a>
         </div>
       </div>
-      <aside class="hero-card" aria-label="What happens next">
+      <aside class="hero-card" aria-label="What PharmPear does">
         <ol>
           <li>
             <span>01</span>
             <div>
-              <strong>Prescription in</strong>
-              <p>Electronic prescriptions and faxes come in. AI reads them and starts the order.</p>
+              <strong>We take the prescription</strong>
+              <p>Electronic prescriptions and faxes are the start of the work.</p>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <strong>Interaction check</strong>
-              <p>We go through the prescription to look for drug interactions before it is filled.</p>
+              <strong>We check and prepare it</strong>
+              <p>AI reads the script. We look for drug interactions, then label the order from our wholesalers.</p>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <strong>Label and ship</strong>
-              <p>We pull product from our wholesalers, print labels, assign a driver, or make a FedEx shipment and pick up.</p>
+              <strong>We get it out</strong>
+              <p>A driver takes local orders. Other orders leave as a FedEx shipment at pickup.</p>
             </div>
           </li>
         </ol>
       </aside>
     </section>
 
-    <section class="band" id="prescriptions">
+    <section class="split" id="about">
+      <div>
+        <p class="eyebrow">About PharmPear</p>
+        <h2>The pharmacy sits between the prescription and the delivery.</h2>
+        <p>PharmPear is built around one job: turn a prescription into a finished, labeled order and put it on its way. Prescribers send scripts electronically or by fax. AI reads the drug, directions, quantity, and prescriber so the order can start instead of sitting in a stack.</p>
+        <p>Before the fill, we go through the prescription for drug interactions. That review supports the fill. It does not replace the prescriber. When the order is clear, we pull the medication through the wholesalers we are connected to, prepare it, and print the labels.</p>
+        <p>Delivery is part of the same business. Local orders are assigned to a driver. Orders that need to ship become a FedEx shipment, with the label printed and the package handed off at pickup.</p>
+      </div>
+      <div class="status-board">
+        <p class="board-label">What the pharmacy handles</p>
+        <div class="row"><span class="dot ink"></span> Electronic prescriptions</div>
+        <div class="row"><span class="dot ink"></span> Fax prescriptions</div>
+        <div class="row"><span class="dot wait"></span> Drug-interaction review</div>
+        <div class="row"><span class="dot go"></span> Wholesaler orders and labels</div>
+        <div class="row"><span class="dot go"></span> Drivers and FedEx pickup</div>
+      </div>
+    </section>
+
+    <section class="band" id="work">
       <div class="section-head">
-        <p class="eyebrow">Prescriptions</p>
-        <h2>Electronic and fax, read with AI.</h2>
+        <p class="eyebrow">How the work runs</p>
+        <h2>From the script to a labeled order.</h2>
+        <p>Each step is part of the pharmacy, not a separate service. The same order is read, checked, prepared, and sent.</p>
       </div>
       <div class="cards">
         <article>
-          <h3>Electronic prescriptions</h3>
-          <p>E-prescriptions land in the queue. AI pulls the drug, directions, quantity, and prescriber so the order can start.</p>
+          <h3>Electronic and fax</h3>
+          <p>E-prescriptions land in the queue. Faxed scripts are read the same way. AI pulls the details so the order can be prepared.</p>
         </article>
         <article>
-          <h3>Fax prescriptions</h3>
-          <p>Faxed scripts are read the same way. AI turns the page into an order instead of leaving it in a paper stack.</p>
+          <h3>Interaction review</h3>
+          <p>We look at the medication on the new prescription and at the patient’s other drugs. The order stays put until that check is done.</p>
         </article>
         <article>
-          <h3>Wholesalers</h3>
-          <p>We are connected to the wholesalers, so the medication on the prescription can be ordered and prepared for fill.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="split" id="safety">
-      <div>
-        <p class="eyebrow">Drug interactions</p>
-        <h2>We go through the prescription before it ships.</h2>
-        <p>Each prescription is reviewed for drug interactions. If something conflicts, it is caught before labels are printed and before a driver or FedEx is assigned.</p>
-        <ul class="ticks">
-          <li>Review the medication on the new prescription</li>
-          <li>Look for interactions with the patient’s other drugs</li>
-          <li>Hold the order until that check is done</li>
-        </ul>
-      </div>
-      <div class="status-board" aria-hidden="true">
-        <p class="board-label">Order path</p>
-        <div class="row"><span class="dot ink"></span> AI read the prescription</div>
-        <div class="row"><span class="dot wait"></span> Interaction check</div>
-        <div class="row"><span class="dot go"></span> Clear to label</div>
-      </div>
-    </section>
-
-    <section class="band band-dark" id="fulfill">
-      <div class="section-head">
-        <p class="eyebrow">Fulfillment</p>
-        <h2>Labels, a driver, or a FedEx pickup.</h2>
-      </div>
-      <div class="cards cards-dark">
-        <article>
-          <h3>Prepare the order</h3>
-          <p>Once the prescription is clear, we prepare the order and print the labels.</p>
+          <h3>Wholesalers and labels</h3>
+          <p>We are connected to the wholesalers. The medication is ordered, the order is prepared, and the labels are printed.</p>
         </article>
         <article>
-          <h3>Assign a driver</h3>
-          <p>Local orders go to a driver. The stop is assigned so the medication leaves with a person, not a pile of notes.</p>
+          <h3>Drivers</h3>
+          <p>Local orders are assigned to a driver so the medication leaves with a person and a stop, not a pile of notes.</p>
         </article>
         <article>
-          <h3>FedEx shipment and pickup</h3>
-          <p>We create the FedEx shipment, print the label, and hand it off at pickup.</p>
+          <h3>FedEx</h3>
+          <p>We create the FedEx shipment, print the shipping label, and hand the package off at pickup.</p>
+        </article>
+        <article>
+          <h3>One pharmacy</h3>
+          <p>Intake, the interaction check, the wholesaler order, the label, and the handoff all belong to PharmPear.</p>
         </article>
       </div>
     </section>
@@ -140,15 +130,15 @@
     <section class="contact" id="contact">
       <div>
         <p class="eyebrow">Contact</p>
-        <h2>Ask about a prescription.</h2>
-        <p>Do not put health details in this form. No drug names, diagnosis, date of birth, member ID, or medical record number. Use it only to ask us to call.</p>
+        <h2>Talk to the pharmacy.</h2>
+        <p>Use this form to ask PharmPear to call you about electronic prescriptions, fax, wholesaler orders, drivers, or FedEx. Do not put health details here. No drug names, diagnosis, date of birth, member ID, or medical record number.</p>
         <p class="mail">Or email <a href="mailto:hello@pharmpear.com">hello@pharmpear.com</a></p>
       </div>
       <form id="contact-form" action="mailto:hello@pharmpear.com" method="post" enctype="text/plain">
         <label>Your name <input name="name" autocomplete="name" required maxlength="80"></label>
         <label>Work email <input name="email" type="email" autocomplete="email" required maxlength="120"></label>
         <label>Office or pharmacy <input name="office" maxlength="120"></label>
-        <label>How should we follow up? <textarea name="message" rows="4" required maxlength="500" placeholder="Call us about electronic prescriptions, fax, or FedEx. No patient details."></textarea></label>
+        <label>How should we follow up? <textarea name="message" rows="4" required maxlength="500" placeholder="Ask for a call about prescriptions, fax, or delivery. No patient details."></textarea></label>
         <button class="btn btn-solid" type="submit">Email PharmPear</button>
         <p class="form-note" id="form-note" role="status"></p>
       </form>
@@ -160,7 +150,7 @@
       <strong>PharmPear</strong>
       <p>pharmpear.com</p>
     </div>
-    <p>This page describes how PharmPear handles prescriptions. It is not medical advice and does not collect health information. A drug-interaction review supports the fill; it does not replace the prescriber.</p>
+    <p>This page describes the pharmacy. It is not medical advice and does not collect health information. A drug-interaction review supports the fill; it does not replace the prescriber.</p>
     <a href="privacy.html">Privacy</a>
   </footer>
   <script src="script.js"></script>
