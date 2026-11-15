@@ -1,0 +1,140 @@
+[
+  {
+    "to": "info@logicoy.com",
+    "cc": [
+      "erx.support@logicoy.com"
+    ],
+    "id": "1a1daf23460d5db8",
+    "subject": "PharmPear \u2014 eRx API sandbox"
+  },
+  {
+    "to": "info@oystehr.com",
+    "cc": [
+      "support@oystehr.com"
+    ],
+    "id": "1a1daf23a6f14b83",
+    "subject": "PharmPear \u2014 eRx service sandbox"
+  },
+  {
+    "to": "info@thepharmacyhub.com",
+    "cc": [],
+    "id": "1a1daf23d11b7410",
+    "subject": "PharmPear \u2014 pharmacy API for routed orders"
+  },
+  {
+    "to": "customerservice@mckesson.com",
+    "cc": [],
+    "id": "1a1daf23ed822011",
+    "subject": "PharmPear \u2014 new pharmacy wholesale account"
+  },
+  {
+    "to": "Pharma-CustomerService@cardinalhealth.com",
+    "cc": [],
+    "id": "1a1daf243f8739fc",
+    "subject": "PharmPear \u2014 new pharmacy distribution account"
+  },
+  {
+    "to": "info@andanet.com",
+    "cc": [],
+    "id": "1a1daf245c4c4d03",
+    "subject": "PharmPear \u2014 new Anda pharmacy account"
+  },
+  {
+    "to": "sales@morrisdickson.com",
+    "cc": [
+      "customerservice@morrisdickson.com"
+    ],
+    "id": "1a1daf24772eb4bb",
+    "subject": "PharmPear \u2014 new pharmacy wholesale account"
+  },
+  {
+    "to": "service@medline.com",
+    "cc": [
+      "helpdesk@medline.com"
+    ],
+    "id": "1a1daf2496a467ec",
+    "subject": "PharmPear \u2014 medical supply account"
+  },
+  {
+    "to": "medsls@henryschein.com",
+    "cc": [
+      "ECS@henryschein.com"
+    ],
+    "id": "1a1daf24be0cdb8f",
+    "subject": "PharmPear \u2014 new medical supply account"
+  },
+  {
+    "to": "prescription@centorrx.com",
+    "cc": [],
+    "id": "1a1daf24a749ef72",
+    "subject": "PharmPear \u2014 prescription vial pricing"
+  },
+  {
+    "to": "healthcare@berryglobal.com",
+    "cc": [],
+    "id": "1a1daf24c001909b",
+    "subject": "PharmPear \u2014 pharmacy vial pricing"
+  },
+  {
+    "to": "customer.service@fagron.us",
+    "cc": [],
+    "id": "1a1daf24e47b15d0",
+    "subject": "PharmPear \u2014 compounding supply account"
+  },
+  {
+    "to": "clientcare@pccarx.com",
+    "cc": [],
+    "id": "1a1daf25036b0421",
+    "subject": "PharmPear \u2014 compounding account"
+  },
+  {
+    "to": "medispan-support@wolterskluwer.com",
+    "cc": [],
+    "id": "1a1daf253673c9c6",
+    "subject": "PharmPear \u2014 Medi-Span API sandbox"
+  },
+  {
+    "to": "info@drugbank.com",
+    "cc": [],
+    "id": "1a1daf254d13ad77",
+    "subject": "PharmPear \u2014 clinical API sandbox"
+  },
+  {
+    "to": "sales@alignrx.org",
+    "cc": [],
+    "id": "1a1db04e37b26ef9",
+    "subject": "PharmPear \u2014 PSAO fees and a call"
+  },
+  {
+    "to": "pharmacyhelp@ncpdp.org",
+    "cc": [
+      "productinfo@ncpdp.org"
+    ],
+    "id": "1a1db04e51fe2c75",
+    "subject": "PharmPear \u2014 NCPDP pharmacy ID fees"
+  },
+  {
+    "to": "pharmacy.connections@relayhealth.com",
+    "cc": [],
+    "id": "1a1db04e7a8e9694",
+    "subject": "PharmPear \u2014 pharmacy claims switch fees and a call"
+  },
+  {
+    "to": "sales@cuvo.co",
+    "cc": [],
+    "id": "1a1db04e94b22c88",
+    "subject": "PharmPear \u2014 dispensing pharmacy, not a telehealth brand"
+  },
+  {
+    "to": "support@srfax.com",
+    "cc": [],
+    "id": "1a1db04ea0464e51",
+    "subject": "PharmPear \u2014 inbound fax API pricing"
+  },
+  {
+    "to": "sales@stripe.com",
+    "cc": [],
+    "id": "1a1db04ed2899853",
+    "subject": "PharmPear \u2014 card payment fees for pharmacy orders"
+  }
+]

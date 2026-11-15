@@ -7,8 +7,12 @@ import secrets
 import time
 from datetime import timedelta
 from pathlib import Path
+from urllib.parse import quote
 
 from flask import Flask, abort, redirect, request, send_from_directory, session
+
+import desk_page
+import pharmacy
 
 ROOT = Path(__file__).resolve().parent
 PUBLIC = ROOT / "public"
@@ -147,7 +151,7 @@ def render_login(error=""):
 @app.get("/login")
 def login_page():
     if session_ok():
-        return redirect("/")
+        return redirect("/desk")
     return render_login()
 
 
@@ -174,7 +178,7 @@ def login_post():
         session["started"] = now
         session["seen"] = now
         session["csrf"] = secrets.token_urlsafe(32)
-        return redirect("/")
+        return redirect("/desk")
     note_failure(ip)
     session["csrf"] = secrets.token_urlsafe(32)
     if locked(ip):
@@ -209,11 +213,128 @@ def send_page(name):
     user = session.get("user") if session_ok() else ""
     if user:
         bar = f'<p class="secure-bar">Signed in as {user}</p>'
-        auth = '<a class="logout" href="/logout">Log out</a>'
+        auth = '<a href="/desk">Desk</a><a class="logout" href="/logout">Log out</a>'
     else:
         bar = ""
         auth = '<a class="logout" href="/login">Sign in</a>'
     return html.replace("__BAR__", bar).replace("__AUTH__", auth)
+
+
+def require_desk():
+    if not session_ok():
+        return redirect("/login")
+    return None
+
+
+def desk_csrf_ok():
+    token = session.get("csrf") or ""
+    sent = request.form.get("csrf") or ""
+    return bool(token) and hmac.compare_digest(token, sent)
+
+
+@app.get("/desk")
+def desk():
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    notice = request.args.get("notice") or ""
+    return desk_page.page(pharmacy.snapshot(), session.get("csrf") or "", notice)
+
+
+@app.post("/desk/workers")
+def desk_workers():
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.save_workers(
+        request.form.get("online_name") or "",
+        request.form.get("online_task") or "",
+        request.form.get("site_name") or "",
+        request.form.get("site_task") or "",
+        request.form.get("caller") or "",
+    )
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.post("/desk/assign")
+def desk_assign():
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.assign_next(request.form.get("task") or "")
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.post("/desk/complete")
+def desk_complete():
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.complete_current(request.form.get("note") or "")
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.post("/desk/routes")
+def desk_routes():
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.plan_routes()
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.post("/desk/fax")
+def desk_fax():
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.intake_fax(request.form.get("fax") or "")
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.post("/desk/ship/<int:order_id>")
+def desk_ship(order_id):
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.choose_ship(order_id)
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.post("/desk/replenish/<int:drug_id>")
+def desk_replenish(drug_id):
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if not desk_csrf_ok():
+        return redirect("/desk?notice=Sign-in+expired.+Try+again.")
+    notice = pharmacy.replenish(drug_id)
+    return redirect("/desk?notice=" + quote(notice))
+
+
+@app.get("/desk/print/<kind>/<int:order_id>")
+def desk_print(kind, order_id):
+    blocked = require_desk()
+    if blocked:
+        return blocked
+    if kind not in {"receipt", "label", "fedex"}:
+        abort(404)
+    order = pharmacy.order_for_print(order_id)
+    if not order:
+        abort(404)
+    return desk_page.print_sheet(kind, order)
 
 
 @app.get("/<path:name>")
